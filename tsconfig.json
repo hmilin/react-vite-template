@@ -18,7 +18,7 @@
       "umi": ["src/umi.ts"]
     },
     "allowSyntheticDefaultImports": true,
-    "types": ["vite/client", "vitest/globals", "vite-plugin-pwa/client"]
+    "types": ["vite/client"]
   },
   "include": [
     "mock/**/*",

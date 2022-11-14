@@ -45,9 +45,6 @@ const Header: React.FC<HeaderProps> = ({}) => {
           <HomeOutlined />
         </div>
       </Popover>
-      <Link className="header-item" to="/v1">
-        子应用
-      </Link>
       <div className="center" />
       <Dropdown overlay={userMenu} placement="bottomRight">
         <div className={styles.avatar}>
