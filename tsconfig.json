@@ -13,9 +13,7 @@
     "baseUrl": "./",
     "strict": true,
     "paths": {
-      "@/*": ["src/*"],
-      "@@/*": ["src/.umi/*"],
-      "umi": ["src/umi.ts"]
+      "@/*": ["src/*"]
     },
     "allowSyntheticDefaultImports": true,
     "types": ["vite/client"]
@@ -24,7 +22,6 @@
     "mock/**/*",
     "src/**/*",
     "config/**/*",
-    ".umirc.ts",
     "typings.d.ts",
     ".eslintrc.js",
     ".stylelintrc.js",

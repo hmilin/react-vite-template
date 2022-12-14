@@ -3,7 +3,7 @@ import { fetchUser } from '@/services/user';
 import type { CaseReducer, PayloadAction } from '@reduxjs/toolkit';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Cookies from 'js-cookie';
-import { history } from 'umi';
+import history from '@/utils/history';
 
 export interface UserState {
   /** 是否登录 */

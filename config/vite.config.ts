@@ -41,10 +41,6 @@ export default defineConfig(({ mode }) => {
           replacement: path.resolve(__dirname, './src/'),
         },
         {
-          find: '/umi/',
-          replacement: path.resolve(__dirname, './src/umi.ts'),
-        },
-        {
           find: 'rc-util/lib',
           replacement: 'rc-util/es',
         },

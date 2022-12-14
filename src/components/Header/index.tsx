@@ -3,7 +3,8 @@ import logoSrc from '@/assets/logo.svg';
 import { HomeOutlined } from '@ant-design/icons';
 import { Avatar, Dropdown, Menu, Popover } from 'antd';
 import React from 'react';
-import { history, Link } from 'umi';
+import history from '@/utils/history';
+import { Link } from 'react-router-dom';
 
 import { useAppDispatch } from '@/store/hooks';
 import styles from './index.less';
