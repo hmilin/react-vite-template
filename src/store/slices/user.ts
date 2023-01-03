@@ -28,9 +28,9 @@ export const queryCurrentUser = createAsyncThunk(
   'user/queryCurrentUser',
   async (_, { dispatch }) => {
     try {
-      if (!Cookies.get('token')) {
-        throw new Error();
-      }
+      // if (!Cookies.get('token')) {
+      //   throw new Error();
+      // }
       const user = await fetchUser();
       dispatch({
         type: 'user/signin',

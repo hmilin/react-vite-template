@@ -1,0 +1,12 @@
+{
+  "fakeUser": {
+    "userID": "1",
+    "loginPhone": "13300000031",
+    "loginPassword": "123456",
+    "protocol": "https",
+    "domain": "localhost",
+    "nickname": "13300000031",
+    "email": "",
+    "token": ""
+  }
+}
