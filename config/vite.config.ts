@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
       //  http://localhost:8000/__inspect/
       Inspect(),
       tsconfigPaths({
-        root: '../',
+        root: './',
       }),
       react({
         jsxRuntime: 'classic',
@@ -78,6 +78,11 @@ export default defineConfig(({ mode }) => {
     esbuild: {
       supported: { 'top-level-await': true },
       // logOverride: { 'this-is-undefined-in-esm': 'silent' },
+    },
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: ['./config/vitest.setup.ts'],
     },
   };
 });

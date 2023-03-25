@@ -1,13 +1,14 @@
 import avatarUrl from '@/assets/avatar.jpg';
 import logoSrc from '@/assets/logo.svg';
 import { HomeOutlined } from '@ant-design/icons';
-import { Avatar, Dropdown, Menu, Popover } from 'antd';
+import { Dropdown, Menu, Popover } from 'antd';
 import React from 'react';
 import history from '@/utils/history';
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch } from '@/store/hooks';
 import styles from './index.less';
+import Avatar from '../Avatar';
 
 interface HeaderProps {}
 

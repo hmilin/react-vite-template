@@ -12,11 +12,12 @@
     "sourceMap": true,
     "baseUrl": "./",
     "strict": true,
+    "typeRoots": ["./node_modules/@types"],
     "paths": {
       "@/*": ["src/*"]
     },
     "allowSyntheticDefaultImports": true,
-    "types": ["vite/client", "@testing-library/jest-dom"]
+    "types": ["vitest/globals", "vite/client", "@testing-library/jest-dom"],
   },
   "include": [
     "src/mock/**/*",
@@ -27,8 +28,7 @@
     ".stylelintrc.js",
     ".prettierrc.js",
     "tailwind.config.js",
-    "postcss.config.js",
-    "cypress.config.ts"
+    "postcss.config.js"
   ],
   "exclude": ["node_modules", "lib", "es", "dist", "typings", "docs"]
 }
