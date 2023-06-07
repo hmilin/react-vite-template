@@ -2,7 +2,6 @@ import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import Inspect from 'vite-plugin-inspect';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import autoCSSModulePlugin from './plugins/autoCSSModule';
 import removeDuplicateAntdCSS from './plugins/removeDuplicateAntdCSS';
 import proxys from './proxys';
@@ -37,21 +36,30 @@ export default defineConfig(({ mode }) => {
         },
         // ts文件里使用@指向src
         {
-          find: '@/',
-          replacement: path.resolve(__dirname, './src/'),
+          find: new RegExp('^@/(.*)$'),
+          replacement: path.resolve(__dirname, '../src/$1'),
         },
         {
           find: 'rc-util/lib',
           replacement: 'rc-util/es',
+        },
+        {
+          find: '@ant-design/icons',
+          replacement: path.join(__dirname, '../node_modules/@ant-design/icons/dist/index.umd.js'),
+        },
+        {
+          find: new RegExp(/^antd$/),
+          replacement: path.join(__dirname, '../node_modules/antd/dist/antd.js'),
+        },
+        {
+          find: 'lodash',
+          replacement: 'lodash-es',
         },
       ],
     },
     plugins: [
       //  http://localhost:8000/__inspect/
       Inspect(),
-      tsconfigPaths({
-        root: './',
-      }),
       react({
         jsxRuntime: 'classic',
       }),
