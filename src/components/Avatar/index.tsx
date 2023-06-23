@@ -3,7 +3,7 @@ import type { AvatarProps  as AvatarAntdProps } from 'antd';
 import { Avatar as AvatarAntd } from 'antd';
 import classNames from 'classnames';
 import React, { useMemo } from 'react';
-import style from './index.less';
+import style from './index.css';
 
 interface AvatarProps extends AvatarAntdProps {
   nickname?: string;

@@ -4,12 +4,12 @@
   display: flex;
   align-items: center;
   width: 100vw;
-  height: 60px;
+  height: var(--header-height);
   padding: 0 24px;
   font-weight: 500;
   font-size: 14px;
   line-height: 60px;
-  background-color: @component-background;
+  background-color: var(--background-primary);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
   .logo {
@@ -40,14 +40,14 @@
     cursor: pointer;
     &:hover,
     &:global(.ant-popover-open) {
-      color: @primary-color;
-      background-color: @primary-1;
+      color: var(--primary-color);
+      background-color: var(--primary-color-1);
     }
     :global(.anticon) {
       font-size: 16px;
     }
     &:not(:hover) {
-      color: @heading-color;
+      color: var(--heading-color);
     }
   }
 }

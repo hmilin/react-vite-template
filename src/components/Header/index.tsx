@@ -7,7 +7,7 @@ import history from '@/utils/history';
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch } from '@/store/hooks';
-import styles from './index.less';
+import styles from './index.css';
 import Avatar from '../Avatar';
 
 interface HeaderProps {}

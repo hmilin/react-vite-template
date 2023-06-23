@@ -6,12 +6,13 @@ import Loading from './components/Loading';
 import routes from './routes';
 import { store } from './store';
 import history from '@/utils/history';
+import theme from './styles/theme';
 
 export default function App() {
   const element = useRoutes(routes, history.location);
 
   return (
-    <AntdConfigProvider locale={zhCN}>
+    <AntdConfigProvider locale={zhCN} theme={theme}>
       <ReduxProvider store={store}>
         <Loading>{element}</Loading>
       </ReduxProvider>

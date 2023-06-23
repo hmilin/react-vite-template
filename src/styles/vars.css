@@ -1,0 +1,64 @@
+/* 定义一些全局公共的主题变量，和./theme.ts保持一致，供tailwindcss和页面组件引用 */
+:root {
+  --header-height: 60px;
+  --font-family: -apple-system, BlinkMacSystemFont, '思源黑体', 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  /* 主题色 */
+  --primary-color: #613eea;
+  --primary-color-1: #f5f0ff;
+  --primary-color-2: #eee6ff;
+  --primary-color-3: #d1bdff;
+  --primary-color-4: #b094ff;
+  --primary-color-5: #8968f7;
+  --primary-color-6: #613eea;
+  --primary-color-7: #4329c4;
+  --primary-color-8: #8968f7;
+  --primary-color-9: #613eea;
+  --primary-color-10: #4329c4;
+  --primary-color-hover: var(--primary-color-5);
+  --primary-color-outline: rgba(88, 5, 255, 0.06);
+
+  /* 其他颜色 */
+  --info-color: #613eea;
+  --warning-color: #ebae21;
+  --error-color: #eb3850;
+  --error-color-hover: #f76372;
+  --success-color: #5cc42f;
+  --highlight-color: #eb3850;
+
+  /* 背景色 */
+  --background-primary: #fff;
+  --background-secondary: #fafafa;
+  --background-tertiary: #f5f5f5;
+  --item-active-bg: #f5f0ff;
+  --item-hover-bg: rgba(0, 0, 0, 0.04);
+  --background-disabled: rgba(0, 0, 0, 0.04);
+
+  /* 标题文字颜色 */
+  --text-color-heading: rgba(0, 0, 0, 0.88);
+  /* 正文文字颜色 */
+  --text-color-main: rgba(0, 0, 0, 0.65);
+  /* 次要文字颜色 */
+  --text-color-tertiary: rgba(0, 0, 0, 0.45);
+  --text-color-quaternary: rgba(0, 0, 0, 0.25);
+  --text-color-disabled: rgba(0, 0, 0, 0.25);
+
+  /* 字体大小 */
+  --font-size-main: 14px;
+  --font-size-heading1: 40px;
+  --font-size-heading2: 32px;
+  --font-size-heading3: 24px;
+  --font-size-heading4: 20px;
+  --font-size-heading5: 14px;
+  --line-height-base: 1.5714285714285714;
+
+  /* 字重 */
+  --font-weight-strong: 500;
+  --font-weight-normal: 400;
+
+  /* 边框 阴影 */
+  --border-color-base: #d9d9d9;
+  --box-shadow-base: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --border-radius: 2px;
+}

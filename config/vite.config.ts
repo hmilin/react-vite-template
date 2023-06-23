@@ -10,14 +10,6 @@ export default defineConfig(({ mode }) => {
   return {
     envDir: './config/environments/', // root的相对路径
     css: {
-      preprocessorOptions: {
-        less: {
-          javascriptEnabled: true,
-          modifyVars: {
-            hack: `true; @import "../src/theme.less";`,
-          },
-        },
-      },
       modules: {
         generateScopedName: '[local]__[hash:base64:5]',
       },

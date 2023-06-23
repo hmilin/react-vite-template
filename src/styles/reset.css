@@ -1,0 +1,65 @@
+@import 'antd/dist/reset.css';
+
+ol,
+ul,
+menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol,
+ul,
+dl {
+  margin-bottom: 1em;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+button,
+[role='button'] {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text-color-heading);
+  font-weight: 500;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 32px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 16px;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  padding: 0;
+}
