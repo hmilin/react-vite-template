@@ -71,7 +71,6 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       cssCodeSplit: false,
-      outDir: 'dist/react-vite-template',
       // sourcemap: true,
       // minify: false,
     },

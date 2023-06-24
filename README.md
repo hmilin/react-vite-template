@@ -10,7 +10,7 @@
 - [x] Ant Design 5 + TailwindCSS
 - [ ] 主题切换
 - [x] 严格的lint和提交检测
-- [ ] Docker
+- [x] Docker
 - [x] 组件测试
 - [x] e2e测试
 - [ ] CI
