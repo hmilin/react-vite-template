@@ -1,0 +1,14 @@
+@import './tailwind.css';
+@import './vars.css';
+@import 'react-resizable/css/styles.css';
+@import './reset.css';
+
+html {
+  font-size: 16px;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-tertiary);
+}

@@ -4,7 +4,7 @@ import { queryCurrentUser } from '@/store/slices/user';
 import { useMount } from 'ahooks';
 import React from 'react';
 import { Outlet } from 'react-router';
-import styles from './index.less';
+import styles from './index.css';
 
 interface LayoutProps {
   auth?: boolean;

@@ -12,8 +12,8 @@
     "preview": "vite --config config/vite.config.ts --mode=dev preview",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
-    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "lint:style": "stylelint --fix \"src/**/*.css\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,css,md,json}\"",
     "preinstall": "npx only-allow pnpm",
     "serve": "vite --config config/vite.config.ts preview",
     "test:e2e": "start-server-and-test serve http://127.0.0.1:8080/ 'cypress open'",
@@ -24,9 +24,9 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "**/*.less": "stylelint --syntax less",
+    "**/*.css": "stylelint --syntax css",
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
-    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+    "**/*.{js,jsx,tsx,ts,css,md,json}": [
       "prettier --write"
     ]
   },
@@ -44,7 +44,7 @@
     "@types/react-transition-group": "^4.4.5",
     "ahooks": "^3.7.2",
     "ahooks-v2": "^2.10.15",
-    "antd": "^4.24.5",
+    "antd": "^5.6.1",
     "axios": "^0.27.2",
     "classnames": "^2.3.2",
     "echarts": "^5.4.1",
@@ -98,8 +98,8 @@
     "eslint": "^7.32.0",
     "eslint-plugin-testing-library": "^5.10.2",
     "jsdom": "^21.1.1",
-    "less": "^4.1.3",
     "lint-staged": "^10.5.4",
+    "postcss-nested": "^6.0.1",
     "prettier": "^2.8.1",
     "rollup-plugin-visualizer": "^5.9.2",
     "start-server-and-test": "^1.15.2",
