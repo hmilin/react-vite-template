@@ -5,6 +5,7 @@ import Inspect from 'vite-plugin-inspect';
 import autoCSSModulePlugin from './plugins/autoCSSModule';
 import removeDuplicateAntdCSS from './plugins/removeDuplicateAntdCSS';
 import proxys from './proxys';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig(({ mode }) => {
   return {
@@ -44,14 +45,6 @@ export default defineConfig(({ mode }) => {
           replacement: 'rc-util/es',
         },
         {
-          find: '@ant-design/icons',
-          replacement: path.join(__dirname, '../node_modules/@ant-design/icons/dist/index.umd.js'),
-        },
-        {
-          find: new RegExp(/^antd$/),
-          replacement: path.join(__dirname, '../node_modules/antd/dist/antd.js'),
-        },
-        {
           find: 'lodash',
           replacement: 'lodash-es',
         },
@@ -80,8 +73,40 @@ export default defineConfig(({ mode }) => {
     build: {
       cssCodeSplit: false,
       outDir: 'dist/react-vite-template',
-      // sourcemap: true,
-      // minify: false,
+      rollupOptions: {
+        plugins: process.env.OUTPUT_STATS
+          ? [
+              visualizer({
+                emitFile: true,
+                filename: 'stats.html',
+              }),
+            ]
+          : null,
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              if (id.includes('lodash-es')) {
+                return 'lodash';
+              }
+              if (id.includes('@ant-design/icons')) {
+                return 'antd-icons';
+              }
+              if (id.includes('@ant-design/pro-table')) {
+                return 'ant-pro-table';
+              }
+              if (id.includes('@formily')) {
+                return 'formily';
+              }
+              if (id.includes('antd')) {
+                return 'antd';
+              }
+              if (id.includes('monaco-editor')) {
+                return 'monaco-editor';
+              }
+            }
+          },
+        },
+      },
     },
     esbuild: {
       supported: { 'top-level-await': true },
