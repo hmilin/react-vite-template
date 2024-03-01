@@ -98,6 +98,7 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
+      target: 'modules',
     },
     esbuild: {
       supported: { 'top-level-await': true },

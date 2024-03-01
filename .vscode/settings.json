@@ -1,0 +1,5 @@
+{
+  "eslint.experimental.useFlatConfig": false,
+  "stylelint.configBasedir": "node_modules/.pnpm",
+  "stylelint.customSyntax": "less"
+}

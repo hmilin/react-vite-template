@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "type": "chrome",
+      "name": "http://localhost:8000",
+      "request": "launch",
+      "url": "http://localhost:8000"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Current Test File",
+      "autoAttachChildProcesses": true,
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
+      "args": ["watch", "${relativeFile}", "--config", "config/vite.config.ts"],
+      "smartStep": true,
+      "console": "integratedTerminal"
+    }
+  ]
+}

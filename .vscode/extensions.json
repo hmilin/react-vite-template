@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "burkeholland.simple-react-snippets",
+    "russell.any-type",
+    "gruntfuggly.todo-tree",
+    "infeng.vscode-react-typescript",
+    "csstools.postcss"
+  ]
+}
