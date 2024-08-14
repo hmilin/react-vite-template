@@ -1,40 +1,51 @@
 import avatarUrl from '@/assets/avatar.jpg';
 import logoSrc from '@/assets/logo.svg';
-import { HomeOutlined } from '@ant-design/icons';
-import { Dropdown, Menu, Popover } from 'antd';
-import React from 'react';
 import history from '@/utils/history';
+import { HomeOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Dropdown, Popover } from 'antd';
+import React, { useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch } from '@/store/hooks';
-import styles from './index.css';
+import { useTranslation } from 'react-i18next';
 import Avatar from '../Avatar';
+import LanguageChanger from './LanguageChanger';
+import styles from './index.css';
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = ({}) => {
   const dispatch = useAppDispatch();
 
-  const handleSignOut = () => {
+  const handleSignOut = useCallback(() => {
     dispatch({
       type: 'user/signout',
     });
-  };
+  }, [dispatch]);
 
   const toHome = () => {
     history.push('/');
   };
 
-  const userMenu = (
-    <Menu className="header-menu">
-      <Menu.Item key="user_center">
-        <Link to="/user/center">个人中心</Link>
-      </Menu.Item>
-      <Menu.Divider />
-      <Menu.Item key="signout">
-        <a onClick={handleSignOut}>退出登录</a>
-      </Menu.Item>
-    </Menu>
+  const { t } = useTranslation();
+
+  const userMenu = useMemo<MenuProps>(
+    () => ({
+      className: 'header-menu',
+      items: [
+        {
+          key: 'user_center',
+          label: <Link to="/user/center">{t('global.pageName.profile')}</Link>,
+        },
+        {
+          key: 'signout',
+          label: t('global.pageName.logout'),
+          onClick: handleSignOut,
+        },
+      ],
+    }),
+    [handleSignOut, t],
   );
 
   return (
@@ -48,7 +59,8 @@ const Header: React.FC<HeaderProps> = ({}) => {
         </div>
       </Popover>
       <div className="center" />
-      <Dropdown overlay={userMenu} placement="bottomRight">
+      <LanguageChanger />
+      <Dropdown menu={userMenu} placement="bottomRight">
         <div className={styles.avatar}>
           <Avatar src={avatarUrl} />
         </div>

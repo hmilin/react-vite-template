@@ -7,4 +7,5 @@ export default {
   dev,
   uat,
   prod,
+  mock: dev,
 } as Record<string, Record<string, string | ProxyOptions>>;

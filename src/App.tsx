@@ -1,21 +1,19 @@
-import { ConfigProvider as AntdConfigProvider } from 'antd';
-import zhCN from 'antd/lib/locale/zh_CN';
 import { Provider as ReduxProvider } from 'react-redux';
-import { useRoutes } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import AntdProvider from './components/AntdProvider';
 import Loading from './components/Loading';
-import routes from './routes';
+import './i18n';
+import { router } from './router';
 import { store } from './store';
-import history from '@/utils/history';
-import theme from './styles/theme';
 
 export default function App() {
-  const element = useRoutes(routes, history.location);
-
   return (
-    <AntdConfigProvider locale={zhCN} theme={theme}>
+    <AntdProvider>
       <ReduxProvider store={store}>
-        <Loading>{element}</Loading>
+        <Loading>
+          <RouterProvider router={router} />
+        </Loading>
       </ReduxProvider>
-    </AntdConfigProvider>
+    </AntdProvider>
   );
 }

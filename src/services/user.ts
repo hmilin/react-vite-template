@@ -1,3 +1,5 @@
+import { request } from '@/utils/request';
+
 export type User = {
   id: string;
   username: string;
@@ -8,6 +10,7 @@ export type User = {
 };
 
 export function fetchUser() {
+  // return request('/api/user/profile');
   const user = {
     id: 'C21121309514446500000002181843',
     username: 'hhh',

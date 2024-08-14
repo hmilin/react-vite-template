@@ -1,0 +1,45 @@
+{
+  "global": {
+    "pageName": {
+      "about": "关于",
+      "profile": "个人中心",
+      "logout": "退出登录"
+    },
+    "common": {
+      "baseInfo": "基本信息",
+      "name": "名称",
+      "description": "描述",
+      "type": "类型",
+      "sort": "排序",
+      "time": "时间",
+      "updateTime": "修改时间",
+      "createTime": "创建时间",
+      "asc": "升序",
+      "dec": "降序",
+      "card": "卡片",
+      "table": "表格",
+      "all": "全部",
+      "create": "创建",
+      "add": "新增",
+      "edit": "编辑",
+      "delete": "删除",
+      "append": "添加",
+      "remove": "移除",
+      "nextStep": "下一步",
+      "previousStep": "上一步",
+      "save": "保存",
+      "submit": "确定",
+      "cancel": "取消"
+    },
+    "template": {
+      "remove_confirm": "确定删除{{target}} <strong>{{name}}</strong>？"
+    },
+    "message": {
+      "remove_successful": "删除成功！",
+      "save_successful": "保存成功！",
+      "remove_failed": "删除成功！",
+      "save_failed": "保存成功！",
+      "404Page": "糟糕，页面走丢了！"
+    }
+  }
+}

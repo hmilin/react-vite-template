@@ -1,0 +1,45 @@
+{
+  "global": {
+    "pageName": {
+      "about": "About us",
+      "profile": "Profile",
+      "logout": "Logout"
+    },
+    "common": {
+      "baseInfo": "BaseInfo",
+      "name": "Name",
+      "description": "Description",
+      "type": "Type",
+      "sort": "SortBy",
+      "updateTime": "Last modified",
+      "createTime": "Last created",
+      "asc": "ASC",
+      "dec": "DESC",
+      "card": "Grid view",
+      "table": "List view",
+      "all": "All",
+      "create": "Create",
+      "add": "Add",
+      "edit": "Edit",
+      "delete": "Delete",
+      "append": "Append",
+      "remove": "Remove",
+      "nextStep": "Next step",
+      "previousStep": "Previous",
+      "save": "Save",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "time": "time"
+    },
+    "template": {
+      "remove_confirm": "Are you sure you want to delete the {{target}} <strong>{{name}}</strong>?"
+    },
+    "message": {
+      "remove_successful": "Delete successful.",
+      "save_successful": "Save successful.",
+      "remove_failed": "Delete failed.",
+      "save_failed": "Save failed.",
+      "404Page": "Oops omg, why is the page missing?"
+    }
+  }
+}

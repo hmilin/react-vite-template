@@ -1,5 +1,5 @@
 import Loading from '@/components/Loading';
-import Layout from '@/layouts';
+import Layout from '@/components/layouts';
 import { lazy } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';

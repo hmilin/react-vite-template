@@ -17,16 +17,15 @@
       "@/*": ["src/*"]
     },
     "allowSyntheticDefaultImports": true,
-    "types": ["vitest/globals", "vite/client", "@testing-library/jest-dom"],
+    "types": ["vite/client", "@testing-library/jest-dom", "vitest/globals"]
   },
   "include": [
     "src/mock/**/*",
     "src/**/*",
     "config/**/*",
-    "typings.d.ts",
-    ".eslintrc.js",
+    ".eslintrc.cjs",
     ".stylelintrc.js",
-    ".prettierrc.js",
+    ".prettierrc.cjs",
     "tailwind.config.js",
     "postcss.config.js"
   ],

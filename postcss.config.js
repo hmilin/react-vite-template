@@ -1,5 +1,5 @@
 /** @type {import('postcss-load-config').Config} */
-const config  = {
+export default {
   plugins: {
     'postcss-nested': {},
     'tailwindcss/nesting': 'postcss-nested',
@@ -9,5 +9,3 @@ const config  = {
     },
   },
 };
-
-module.exports = config

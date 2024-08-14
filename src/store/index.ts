@@ -5,23 +5,35 @@ import type {
   TypedAddListener,
   TypedStartListening,
 } from '@reduxjs/toolkit';
-import { addListener, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
+import {
+  addListener,
+  combineReducers,
+  configureStore,
+  createListenerMiddleware,
+} from '@reduxjs/toolkit';
 import type { UserState } from './slices/user';
 import userSliceReducers from './slices/user';
 const listenerMiddlewareInstance = createListenerMiddleware({
   onError: () => console.error,
 });
 
-export const store = configureStore<{
-  user: UserState;
-}>({
-  reducer: {
-    user: userSliceReducers,
-  },
+const rootReducer = combineReducers({
+  user: userSliceReducers,
 });
 
+export function setupStore(preloadedState?: Partial<RootState>) {
+  return configureStore<{
+    user: UserState;
+  }>({
+    reducer: rootReducer,
+    preloadedState,
+  });
+}
+export const store = setupStore();
+
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,

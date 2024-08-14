@@ -1,6 +1,7 @@
 declare module '*.css';
 declare module '*.less';
 declare module '*.png';
+declare module '*.jpg';
 declare module '*.svg' {
   export function ReactComponent(props: React.SVGProps<SVGSVGElement>): React.ReactElement;
   const url: string;
@@ -11,15 +12,7 @@ declare module '*.js?url' {
   export default url;
 }
 
-declare const FACTORY_URL: string;
-declare const LOGIN_URL: string;
-declare const FESUPPORT_URL: string;
-declare const DOCS_URL: string;
-declare const DATABASE_URL: string;
-declare const APICOMPOSE_URL: string;
-declare const LOWCODE_URL: string;
-declare const COMPOSER_URL: string;
-declare const SUB_DOMAIN: string;
+declare module 'css-has-pseudo/browser';
 
 // 将部分key设为optional
 type Merge<T, U> = Pick<T & U, keyof (T & U)>;

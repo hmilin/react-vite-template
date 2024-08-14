@@ -1,6 +1,6 @@
 module.exports = {
   plugins: ['compat'],
-  extends: [require.resolve('@umijs/fabric/dist/eslint'), 'plugin:compat/recommended'],
+  extends: [require.resolve('@umijs/fabric/dist/eslint'), 'plugin:compat/recommended', 'plugin:security/recommended-legacy'],
   globals: {
     page: true,
     REACT_APP_ENV: true,

@@ -1,9 +1,6 @@
-import { Modal } from 'antd';
-import type { Blocker } from 'history';
-import { useCallback } from 'react';
+import { App as AntdApp } from 'antd';
+import { useEffect } from 'react';
 import { useBlocker } from './useBlocker';
-
-const { confirm } = Modal;
 
 /**
  * react-router6将usePrompt移除了，这里抄过来并用自己的confirm组件
@@ -12,17 +9,17 @@ const { confirm } = Modal;
  * @param  when
  */
 export function usePrompt(message: string, when = true) {
-  const blocker = useCallback(
-    (tx: Parameters<Blocker>[0]) => {
-      // eslint-disable-next-line no-alert
-      confirm({
+  const { modal } = AntdApp.useApp();
+
+  const blocker = useBlocker(when);
+
+  useEffect(() => {
+    if (blocker.state === 'blocked') {
+      modal.confirm({
         title: '确定',
         content: message,
-        onOk: tx.retry,
+        onOk: () => blocker.proceed?.(),
       });
-    },
-    [message],
-  );
-
-  useBlocker(blocker, when);
+    }
+  }, [blocker, message, modal]);
 }
