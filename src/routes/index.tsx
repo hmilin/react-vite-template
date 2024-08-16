@@ -5,6 +5,7 @@ import type { RouteObject } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
 const Home = lazy(() => import('@/pages/Home'));
+const About = lazy(() => import('@/pages/About'));
 
 const routes: RouteObject[] = [
   {
@@ -20,6 +21,14 @@ const routes: RouteObject[] = [
         element: (
           <Loading>
             <Home />
+          </Loading>
+        ),
+      },
+      {
+        path: 'about',
+        element: (
+          <Loading>
+            <About />
           </Loading>
         ),
       },

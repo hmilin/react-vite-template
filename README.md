@@ -11,6 +11,7 @@
 - [x] 国际化配置
 - [x] 基于msw的mock数据
 - [x] 常用工具函数和hooks
+- [x] 结合vite和react-router的路由预加载
 - [x] 严格的lint和提交检测
 - [x] Docker
 - [x] 基于`vitest`和`@testing-library/rect`的组件测试

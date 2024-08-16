@@ -75,6 +75,7 @@
     "react-draggable": "^4.4.6",
     "react-i18next": "^15.0.1",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-lazy-with-preload": "^2.2.1",
     "react-mentions": "^4.4.10",
     "react-quill": "^2.0.0",
     "react-redux": "^8.1.3",

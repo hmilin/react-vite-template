@@ -1,17 +1,19 @@
 import avatarUrl from '@/assets/avatar.jpg';
 import logoSrc from '@/assets/logo.svg';
+import { useAppDispatch } from '@/store/hooks';
 import history from '@/utils/history';
 import { HomeOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Dropdown, Popover } from 'antd';
+import { Dropdown } from 'antd';
 import React, { useCallback, useMemo } from 'react';
-import { Link } from 'react-router-dom';
-
-import { useAppDispatch } from '@/store/hooks';
 import { useTranslation } from 'react-i18next';
+import { lazyWithPreload } from 'react-lazy-with-preload';
+import { Link } from 'react-router-dom';
 import Avatar from '../Avatar';
 import LanguageChanger from './LanguageChanger';
 import styles from './index.css';
+
+const AboutPage = lazyWithPreload(() => import('@/pages/About'));
 
 interface HeaderProps {}
 
@@ -53,11 +55,14 @@ const Header: React.FC<HeaderProps> = ({}) => {
       <div className={styles.logo}>
         <img src={logoSrc} alt="logo" />
       </div>
-      <Popover placement="bottomRight">
-        <div className="header-item" onClick={toHome}>
-          <HomeOutlined />
-        </div>
-      </Popover>
+      <div className="header-item" onClick={toHome}>
+        <HomeOutlined />
+      </div>
+      <div className="header-item">
+        <Link to="/about" onMouseEnter={AboutPage.preload}>
+          about
+        </Link>
+      </div>
       <div className="center" />
       <LanguageChanger />
       <Dropdown menu={userMenu} placement="bottomRight">
