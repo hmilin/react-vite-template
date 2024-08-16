@@ -8,17 +8,16 @@
 ## 特性
 
 - [x] Ant Design 5 + TailwindCSS
-- [ ] 主题切换
+- [x] 国际化配置
+- [x] 基于msw的mock数据
+- [x] 常用工具函数和hooks
 - [x] 严格的lint和提交检测
 - [x] Docker
-- [x] 组件测试
-- [x] e2e测试
-- [ ] CI
+- [x] 基于`vitest`和`@testing-library/rect`的组件测试
+- [x] 基于`cypress`的e2e测试
+- [ ] CI: `github action`  `gitlab CI`
 
 ## 开发规范
-
-
-
 
 ## 开发
 
