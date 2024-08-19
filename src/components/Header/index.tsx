@@ -7,13 +7,10 @@ import type { MenuProps } from 'antd';
 import { Dropdown } from 'antd';
 import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { lazyWithPreload } from 'react-lazy-with-preload';
-import { Link } from 'react-router-dom';
 import Avatar from '../Avatar';
+import Link from '../Link';
 import LanguageChanger from './LanguageChanger';
 import styles from './index.css';
-
-const AboutPage = lazyWithPreload(() => import('@/pages/About'));
 
 interface HeaderProps {}
 
@@ -59,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
         <HomeOutlined />
       </div>
       <div className="header-item">
-        <Link to="/about" onMouseEnter={AboutPage.preload}>
+        <Link to="/about" preload="viewport" loader={() => import('@/pages/About')}>
           about
         </Link>
       </div>

@@ -5,6 +5,7 @@ import { useMount } from 'ahooks';
 import React from 'react';
 import { Outlet } from 'react-router';
 import styles from './index.css';
+import Loading from '../Loading';
 
 interface LayoutProps {
   auth?: boolean;
@@ -20,9 +21,11 @@ const Layout: React.FC<LayoutProps> = () => {
   return (
     <div className={styles.layout}>
       <Header />
-      <main>
-        <Outlet />
-      </main>
+      <Loading>
+        <main>
+          <Outlet />
+        </main>
+      </Loading>
     </div>
   );
 };

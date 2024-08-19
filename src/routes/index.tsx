@@ -14,6 +14,7 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
+
         element: <Navigate to="/home" />,
       },
       {
@@ -26,11 +27,7 @@ const routes: RouteObject[] = [
       },
       {
         path: 'about',
-        element: (
-          <Loading>
-            <About />
-          </Loading>
-        ),
+        Component: About,
       },
     ],
   },
