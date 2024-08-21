@@ -2,8 +2,10 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import AntdProvider from './components/AntdProvider';
 import Loading from './components/Loading';
+import RoutesProvider from './components/RoutesProvider';
 import './i18n';
 import { router } from './router';
+import routes from './routes';
 import { store } from './store';
 
 export default function App() {
@@ -11,7 +13,9 @@ export default function App() {
     <AntdProvider>
       <ReduxProvider store={store}>
         <Loading>
-          <RouterProvider router={router} />
+          <RoutesProvider routes={routes}>
+            <RouterProvider router={router} />
+          </RoutesProvider>
         </Loading>
       </ReduxProvider>
     </AntdProvider>

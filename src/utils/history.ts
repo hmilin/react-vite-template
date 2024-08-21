@@ -35,6 +35,7 @@ const initHistory = () => {
 };
 
 export function injectRouter(newRouter: Router) {
+  console.log('newRouter', newRouter)
   router = newRouter;
   initHistory();
 }

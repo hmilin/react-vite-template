@@ -53,7 +53,7 @@ export default defineConfig(({ mode }) => {
       removeDuplicateAntdCSS(),
     ],
     server: {
-      port: 8002,
+      port: 8888,
       proxy: proxys[mode],
       sourcemap: true,
     },

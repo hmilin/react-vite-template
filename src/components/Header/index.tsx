@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
         <HomeOutlined />
       </div>
       <div className="header-item">
-        <Link to="/about" preload="viewport" loader={() => import('@/pages/About')}>
+        <Link to="/about" preload="intent">
           about
         </Link>
       </div>

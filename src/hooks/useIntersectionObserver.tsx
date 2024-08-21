@@ -32,6 +32,7 @@ export function useIntersectionObserver<T extends Element>(
   options: { disabled?: boolean } = {},
 ): IntersectionObserver | null {
   const isIntersectionObserverAvailable = useRef(typeof IntersectionObserver === 'function');
+  const staticOptions = useRef(intersectionObserverOptions);
 
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -42,14 +43,14 @@ export function useIntersectionObserver<T extends Element>(
 
     observerRef.current = new IntersectionObserver(([entry]) => {
       callback(entry);
-    }, intersectionObserverOptions);
+    }, staticOptions.current);
 
     observerRef.current.observe(ref.current);
 
     return () => {
       observerRef.current?.disconnect();
     };
-  }, [callback, intersectionObserverOptions, options.disabled, ref]);
+  }, [callback, options.disabled, ref]);
 
   return observerRef.current;
 }

@@ -3,31 +3,42 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import type { ComponentType } from 'react';
 import { forwardRef, useCallback, useRef } from 'react';
 import type { LinkProps as RouterLinkProps } from 'react-router-dom';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, matchRoutes } from 'react-router-dom';
+import useRoutesData from '../RoutesProvider/useRoutesData';
+import type { LazyLoadResult } from '@/utils/lazy';
 
 interface LinkProps extends RouterLinkProps {
   /** preload strategy */
   preload?: 'intent' | 'viewport' | false;
-  /** TODO autoload by the matched route? */
-  loader?: () => Promise<{ default: ComponentType }>;
 }
 
+/**
+ * 基于react-router-dom的Link组件实现了preload功能
+ */
 const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
-  { preload, loader, onMouseEnter, ...props },
+  { preload, onMouseEnter, ...props },
   forwardedRef,
 ) {
   const preloadedComponent = useRef<ComponentType>();
   const elementRef = useRef<HTMLAnchorElement | null>(null);
   const mergedRef = useForkRef(elementRef, forwardedRef);
 
+  const routes = useRoutesData();
+
   // preload component
   const preloadComponent = useCallback(() => {
-    if (!preloadedComponent.current && loader) {
-      loader().then((module) => {
-        preloadedComponent.current = module.default;
+    if (!preloadedComponent.current) {
+      const matches = matchRoutes(routes, props.to);
+      matches?.forEach((route) => {
+        const loader = (route.route.Component as LazyLoadResult)?.preload;
+        if (loader) {
+          loader().then((module) => {
+            preloadedComponent.current = module.default;
+          });
+        }
       });
     }
-  }, [loader]);
+  }, [props.to, routes]);
 
   const handleMouseEnter: React.MouseEventHandler<HTMLAnchorElement> = useCallback(
     (e) => {
