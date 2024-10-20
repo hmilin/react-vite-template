@@ -1,3 +1,4 @@
+import BuilderPage from '@/builder-page';
 import Loading from '@/components/Loading';
 import Layout from '@/components/layouts';
 import { lazyLoad } from '@/utils/lazy';
@@ -28,6 +29,10 @@ const routes: RouteObject[] = [
       {
         path: 'about',
         Component: About,
+      },
+      {
+        path: 'builder-demo',
+        element: <BuilderPage />,
       },
     ],
   },

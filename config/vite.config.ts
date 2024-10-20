@@ -1,3 +1,4 @@
+import { builderDevTools } from '@builder.io/dev-tools/vite';
 import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -51,6 +52,7 @@ export default defineConfig(({ mode }) => {
       react(),
       autoCSSModulePlugin(),
       removeDuplicateAntdCSS(),
+      builderDevTools(),
     ],
     server: {
       port: 8888,

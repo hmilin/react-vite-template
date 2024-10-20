@@ -10,7 +10,7 @@
     "Edge >=88"
   ],
   "scripts": {
-    "start": "vite --config config/vite.config.ts --mode=dev",
+    "start": "vite --config vite.config.ts --mode=dev",
     "start:uat": "vite --config config/vite.config.ts --mode=uat",
     "start:prod": "vite --config config/vite.config.ts --mode=prod",
     "start:mock": "vite --config config/vite.config.ts --mode=mock",
@@ -42,6 +42,9 @@
   "dependencies": {
     "@ant-design/icons": "^5.3.1",
     "@ant-design/pro-table": "^3.14.2",
+    "@builder.io/dev-tools": "^1.1.24",
+    "@builder.io/react": "^5.0.6",
+    "@builder.io/sdk": "^3.0.3",
     "@formily/antd": "^2.3.1",
     "@formily/core": "^2.3.1",
     "@formily/react": "^2.3.1",
